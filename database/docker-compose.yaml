@@ -3,20 +3,11 @@ services:
     image: postgres:17
     shm_size: 128mb
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=restaurants
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - ./volume:/var/lib/postgresql/data:rw
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
-  # pgadmin:
-  #   image: dpage/pgadmin4
-  #   environment:
-  #     - PGADMIN_DEFAULT_EMAIL=admin@admin.com 
-  #     - PGADMIN_DEFAULT_PASSWORD=password
-  #   ports:
-  #     - "8080:80"
-  #   depends_on:
-  #     - db
