@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS restaurants (
     street_name VARCHAR(255),
     street_number VARCHAR(20),
     street_complement VARCHAR(255),
+    street_neighborhood VARCHAR(255),
     postalcode VARCHAR(20),
     city VARCHAR(100),
     state VARCHAR(100),
@@ -31,7 +32,7 @@ CREATE TABLE IF NOT EXISTS opening_hours (
     day_of_week VARCHAR(25),
     opens_at TIME,
     closes_at TIME,
-    is_closed BOOLEAN DEFAULT FALSE,
+    is_opened BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
