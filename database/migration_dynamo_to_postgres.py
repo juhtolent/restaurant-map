@@ -232,7 +232,7 @@ def insert_restaurants_to_db(data, conn):
                 "ratings": restaurant_data.get("ratings"),
                 "vegetarian_food": restaurant_data.get("vegetarian_food", False),
                 "website": restaurant_data.get("website"),
-                "opening_hours_description": json.dumps(restaurant_data.get("opening_hours_description")) if restaurant_data.get("opening_hours_description") else None
+                "opening_hours_description": ', '.join(restaurant_data.get("opening_hours_description")) if restaurant_data.get("opening_hours_description") else None
             }
             
             cursor.execute(restaurant_insert, restaurant_params)
