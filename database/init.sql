@@ -16,7 +16,6 @@ CREATE TABLE IF NOT EXISTS restaurants (
     google_url VARCHAR(500),
     latitude DECIMAL(10, 8),
     longitude DECIMAL(11, 8),
-    primary_restaurant_type VARCHAR(100),
     ratings DECIMAL(3, 2),
     vegetarian_food BOOLEAN DEFAULT FALSE,
     website VARCHAR(500),
